@@ -3,38 +3,30 @@
   hosts: web
 
   tasks:
-  - name: Apache disabled and stop running
+  - name: stop and disable Apache
     service:
       name: httpd
       enabled: false
       state: stopped
       
-  - name: firewalld disabled permits http service
+  - name: disable firewalld permits of http service
     firewalld:
       service: http
-      permanent: true
-      state: disabled
+      state: stopped
       immediate: yes
 
-  - name: firewalld disabled and stop running
+  - name: stop and disable firewalld
     service:
-      name: firewalld
+      name: firewall
       enabled: false
       state: stopped
 
-  - name: Remove the firewalld package
+  - name: latest firewalld version installed
     yum:
       name: firewalld
       state: absent
       
-  - name:  Remove the Apache package
+  - name: latest Apache version installed
     yum:
       name: httpd
       state: absent
-
-
-
-
-
-
-
