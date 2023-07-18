@@ -17,7 +17,7 @@
 
   - name: stop and disable firewalld
     service:
-      name: firewall
+      name: firewalld
       enabled: false
       state: stopped
 
