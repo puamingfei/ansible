@@ -7,7 +7,7 @@
     service:
       name: httpd
       enabled: false
-      state: disabled
+      state: stopped
       
   - name: disable firewalld permits of http service
     firewalld:
@@ -19,7 +19,7 @@
     service:
       name: firewall
       enabled: false
-      state: disabled
+      state: stopped
 
   - name: latest firewalld version installed
     yum:
