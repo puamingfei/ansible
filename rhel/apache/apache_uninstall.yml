@@ -8,19 +8,19 @@
       name: httpd
       enabled: false
       state: stopped
-      
-  - name: disable firewalld permits of http service
-    firewalld:
-      service: http
-      state: disabled
-      immediate: yes
 
   - name: stop and disable firewalld
     service:
       name: firewalld
       enabled: false
       state: stopped
-
+      
+  - name: disable firewalld permits of http service
+    firewalld:
+      service: http
+      state: disabled
+      immediate: yes
+      
   - name: latest firewalld version installed
     yum:
       name: firewalld
