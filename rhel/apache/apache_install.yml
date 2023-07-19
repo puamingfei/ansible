@@ -8,6 +8,12 @@
       name: httpd
       state: latest
 
+  - name: Apache enabled and running
+    service:
+      name: httpd
+      enabled: true
+      state: started
+      
   - name: latest firewalld version installed
     yum:
       name: firewalld
@@ -16,12 +22,6 @@
   - name: firewalld enabled and running
     service:
       name: firewalld
-      enabled: true
-      state: started
-
-  - name: Apache enabled and running
-    service:
-      name: httpd
       enabled: true
       state: started
 
