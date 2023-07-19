@@ -13,12 +13,6 @@
       name: firewalld
       state: latest
 
-  - name: Apache enabled and running
-    service:
-      name: httpd
-      enabled: true
-      state: started
-      
   - name: firewalld enabled and running
     service:
       name: firewalld
@@ -31,3 +25,10 @@
       permanent: true
       state: enabled
       immediate: yes
+
+  - name: Apache enabled and running
+    service:
+      name: httpd
+      enabled: true
+      state: started
+      
