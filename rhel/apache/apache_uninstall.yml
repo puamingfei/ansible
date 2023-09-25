@@ -12,7 +12,7 @@
   - name: disable firewalld permits of http service
     firewalld:
       service: http
-      state: disabled
+      state: stopped
       immediate: yes
       
   - name: stop and disable firewalld
